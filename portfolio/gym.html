@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitZone Personal Training</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background: #ffffff;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: #dc2626;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .services {
+            padding: 3rem 0;
+            background: #f8fafc;
+        }
+        
+        .services h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #dc2626;
+            margin-bottom: 2rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 4px solid #f97316;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .service-icon i {
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .service-card h3 {
+            color: #dc2626;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .service-card p {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+        
+        .about {
+            padding: 3rem 0;
+        }
+        
+        .about h2 {
+            font-size: 2rem;
+            color: #dc2626;
+            margin-bottom: 1rem;
+        }
+        
+        .about p {
+            color: #64748b;
+            margin-bottom: 1rem;
+        }
+        
+        .contact {
+            padding: 3rem 0;
+            background: #f8fafc;
+        }
+        
+        .contact h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #dc2626;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: #f97316;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        
+        .contact-icon i {
+            font-size: 1.2rem;
+            color: white;
+        }
+        
+        .contact-item h3 {
+            color: #dc2626;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-item p {
+            color: #64748b;
+        }
+        
+        .map-container {
+            margin: 2rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #f97316;
+        }
+        
+        .btn {
+            background: #f97316;
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background: #ea580c;
+        }
+        
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>FitZone Personal Training</h1>
+            <p>Transform Your Body, Transform Your Life</p>
+        </div>
+    </header>
+
+    <section class="services">
+        <div class="container">
+            <h2>Training Programs</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>1-on-1 Training</h3>
+                    <p>Personalized sessions tailored to your specific goals, fitness level, and schedule.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Small Group Training</h3>
+                    <p>Train with friends in small groups for motivation and cost-effective personal training.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <h3>Nutrition Coaching</h3>
+                    <p>Comprehensive nutrition guidance to complement your training and maximize results.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Flexible Scheduling</h3>
+                    <p>Early morning, evening, and weekend sessions available to fit your busy lifestyle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2>About FitZone</h2>
+            <p>At FitZone, we believe fitness should be accessible, enjoyable, and results-driven. Our certified personal trainers are dedicated to helping you achieve your health and fitness goals in a supportive, non-intimidating environment.</p>
+            <p>Whether you're a beginner taking your first steps into fitness or an experienced athlete looking to break through plateaus, we're here to guide you every step of the way.</p>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <h2>Start Your Fitness Journey</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone</h3>
+                    <p>020 7123 4567</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>info@fitzone.co.uk</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Location</h3>
+                    <p>45 Fitness Street<br>London SW1A 1AA</p>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.123456789!2d-0.123456!3d51.5074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDMwJzI2LjYiTiAwwrAwNyc0NC40Ilc!5e0!3m2!1sen!2suk!4v1234567890123!5m2!1sen!2suk" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">What's your main goal?</option>
+                            <option value="weight-loss">Weight Loss</option>
+                            <option value="muscle-gain">Muscle Gain</option>
+                            <option value="strength">Strength Building</option>
+                            <option value="endurance">Endurance</option>
+                            <option value="general">General Fitness</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Tell us about your fitness goals and any injuries or limitations" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Book Free Consultation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 FitZone Personal Training. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
